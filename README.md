@@ -24,3 +24,12 @@ Future Goals:
   - OpenAl audio
   - Oculus mode
   - A.I.
+
+Environment setup:
+  - IDE: IntelliJ IDEA 15.0.3
+  - JDK: jdk-8u74
+    - To set: File->Project Structure->Project SDK: 1.8(java version "1.8.0_74")
+  - Libraries:
+    - LWJGL 3
+      - To set: File->Project Structure->Libraries: + (Java jar file location)
+
