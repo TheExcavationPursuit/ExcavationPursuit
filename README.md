@@ -31,5 +31,5 @@ Environment setup:
     - To set: File->Project Structure->Project SDK: 1.8(java version "1.8.0_74")
   - Libraries:
     - LWJGL 3
-      - To set: File->Project Structure->Libraries: + (Java jar file location)
+      - To set: Follow http://wiki.lwjgl.org/wiki/Setting_Up_LWJGL_with_IntelliJ_IDEA
 
