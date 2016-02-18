@@ -23,16 +23,16 @@ public class VectorTest {
         System.out.println(v3);
         System.out.println();
 
-        System.out.println("v3.Magnitude()");
+        System.out.println("v3.magnitude()");
         System.out.println(v3.magnitude());
         System.out.println();
 
-        System.out.println("v3.Normalize()");
+        System.out.println("v3.normalize()");
         v3.normalize();
         System.out.println(v3);
         System.out.println();
 
-        System.out.println("v3.Magnitude()");
+        System.out.println("v3.magnitude()");
         System.out.println(v3.magnitude());
         System.out.println();
 
@@ -40,6 +40,30 @@ public class VectorTest {
         System.out.println(Ep_Vector.angleBetweenVectors(v1, v2));
         System.out.println();
 
+        System.out.println("v1 - v2");
+        v1.subtract(v2);
+        System.out.println(v1);
+        System.out.println();
+
+        System.out.println("v1 + v2");
+        v1.add(v2);
+        System.out.println(v1);
+        System.out.println();
+
+        System.out.println("v1.negate()");
+        v1.negate();
+        System.out.println(v1);
+        System.out.println();
+
+        System.out.println("v1.multiply(5)");
+        v1.multiply(5);
+        System.out.println(v1);
+        System.out.println();
+
+        System.out.println("v1.divide(5)");
+        v1.divide(5);
+        System.out.println(v1);
+        System.out.println();
 
     }
 }

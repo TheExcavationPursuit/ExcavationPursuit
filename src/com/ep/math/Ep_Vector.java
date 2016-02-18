@@ -81,6 +81,50 @@ public class Ep_Vector {
     }
 
     /**
+     * Add the Ep_Vector u to this Ep_Vector
+     * @param u Ep_Vector to add to this Ep_Vector
+     */
+    public void add(Ep_Vector u)
+    {
+        components[0] += u.get(0);
+        components[1] += u.get(1);
+        components[2] += u.get(2);
+    }
+
+    /**
+     * Subtract the Ep_Vector u from this Ep_Vector
+     * @param u Ep_Vector to subtract from this Ep_Vector
+     */
+    public void subtract(Ep_Vector u)
+    {
+        components[0] -= u.get(0);
+        components[1] -= u.get(1);
+        components[2] -= u.get(2);
+    }
+
+    /**
+     * Multiply the vector by the scalar
+     * @param multiplier Scalar to multiply the vector by
+     */
+    public void multiply(float multiplier)
+    {
+        components[0] *= multiplier;
+        components[1] *= multiplier;
+        components[2] *= multiplier;
+    }
+
+    /**
+     * Divide the vector by the scalar
+     * @param divisor Scalar to divide the vector by
+     */
+    public void divide(float divisor)
+    {
+        components[0] /= divisor;
+        components[1] /= divisor;
+        components[2] /= divisor;
+    }
+
+    /**
      * Perform the dot product operation using this Ep_Vector and the parameter Ep_Vector
      * @param vector2 The Ep_Vector to perform the dot product with
      * @return The dot product of these Ep_Vectors
@@ -129,6 +173,16 @@ public class Ep_Vector {
         components[0] /= magnitude;
         components[1] /= magnitude;
         components[2] /= magnitude;
+    }
+
+    /**
+     * Negate the Ep_Vector, i.e. same magnitude, but opposite direction
+     */
+    public void negate()
+    {
+        components[0] *= -1;
+        components[1] *= -1;
+        components[2] *= -1;
     }
 
     /**
