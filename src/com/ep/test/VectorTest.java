@@ -6,9 +6,9 @@ import com.ep.math.*;
  */
 public class VectorTest {
     public static void main(String args[]) {
-        Ep_Vector v1 = new Ep_Vector(3.0f, -3.0f, 1.0f);
-        Ep_Vector v2 = new Ep_Vector(4.0f, 9.0f, 2.0f);
-        Ep_Vector v3 = new Ep_Vector();
+        EpVector v1 = new EpVector(3.0f, -3.0f, 1.0f);
+        EpVector v2 = new EpVector(4.0f, 9.0f, 2.0f);
+        EpVector v3 = new EpVector();
         v3.cross(v1, v2);
 
         System.out.println("v1");
@@ -37,7 +37,7 @@ public class VectorTest {
         System.out.println();
 
         System.out.println("Angle between v1 and v2 in radians");
-        System.out.println(Ep_Vector.angleBetweenVectors(v1, v2));
+        System.out.println(EpVector.angleBetweenVectors(v1, v2));
         System.out.println();
 
         System.out.println("v1 - v2");

@@ -3,11 +3,14 @@ package com.ep.math;
 /**
  * Created by Josh Pacana on 2/17/16.
  */
-public class Ep_Vector {
+public class EpVector {
+
+    private float[] components;     //!< Components that define the vector (x, y, z)
+
     /**
      * Construct a vector with all components initialized to 0.0f
      */
-    public Ep_Vector()
+    public EpVector()
     {
         components = new float[3];
         components[0] = 0.0f;
@@ -19,7 +22,7 @@ public class Ep_Vector {
      * Construct a vector by specifying one dimension
      * @param x a float describing the x component of a vector.
      */
-    public Ep_Vector(float x)
+    public EpVector(float x)
     {
         components = new float[3];
         components[0] = x;
@@ -32,7 +35,7 @@ public class Ep_Vector {
      * @param x a float describing the x component of a vector.
      * @param y a float describing the y component of a vector.
      */
-    public Ep_Vector(float x, float y)
+    public EpVector(float x, float y)
     {
         components = new float[3];
         components[0] = x;
@@ -46,7 +49,7 @@ public class Ep_Vector {
      * @param y a float describing the y component of a vector.
      * @param z a float describing the z component of a vector.
      */
-    public Ep_Vector(float x, float y, float z)
+    public EpVector(float x, float y, float z)
     {
         components = new float[3];
         components[0] = x;
@@ -70,8 +73,8 @@ public class Ep_Vector {
     }
 
     /**
-     * String representation of an Ep_Vector
-     * @return String representation of an Ep_Vector in the form of [x, y, z]
+     * String representation of an EpVector
+     * @return String representation of an EpVector in the form of [x, y, z]
      */
     @Override
     public String toString() {
@@ -81,10 +84,10 @@ public class Ep_Vector {
     }
 
     /**
-     * Add the Ep_Vector u to this Ep_Vector
-     * @param u Ep_Vector to add to this Ep_Vector
+     * Add the EpVector u to this EpVector
+     * @param u EpVector to add to this EpVector
      */
-    public void add(Ep_Vector u)
+    public void add(EpVector u)
     {
         components[0] += u.get(0);
         components[1] += u.get(1);
@@ -92,10 +95,10 @@ public class Ep_Vector {
     }
 
     /**
-     * Subtract the Ep_Vector u from this Ep_Vector
-     * @param u Ep_Vector to subtract from this Ep_Vector
+     * Subtract the EpVector u from this EpVector
+     * @param u EpVector to subtract from this EpVector
      */
-    public void subtract(Ep_Vector u)
+    public void subtract(EpVector u)
     {
         components[0] -= u.get(0);
         components[1] -= u.get(1);
@@ -125,11 +128,11 @@ public class Ep_Vector {
     }
 
     /**
-     * Perform the dot product operation using this Ep_Vector and the parameter Ep_Vector
-     * @param vector2 The Ep_Vector to perform the dot product with
-     * @return The dot product of these Ep_Vectors
+     * Perform the dot product operation using this EpVector and the parameter EpVector
+     * @param vector2 The EpVector to perform the dot product with
+     * @return The dot product of these EpVectors
      */
-    public float dot(Ep_Vector vector2)
+    public float dot(EpVector vector2)
     {
         float retval;
         retval = (components[0] * vector2.get(0)) + (components[1] * vector2.get(1)) + (components[2] * vector2.get(2));
@@ -138,11 +141,11 @@ public class Ep_Vector {
     }
 
     /**
-     * Perform the cross product on the two Ep_Vectors passed in
-     * @param u First Ep_Vector used in cross product
-     * @param v Second Ep_Vector used in cross product
+     * Perform the cross product on the two EpVectors passed in
+     * @param u First EpVector used in cross product
+     * @param v Second EpVector used in cross product
      */
-    public void cross(Ep_Vector u, Ep_Vector v)
+    public void cross(EpVector u, EpVector v)
     {
         components[0] = (u.get(1) * v.get(2)) - (u.get(2) * v.get(1));
         components[1] = (u.get(2) * v.get(0)) - (u.get(0) * v.get(2));
@@ -150,8 +153,8 @@ public class Ep_Vector {
     }
 
     /**
-     * Calculate the magnitude of the Ep_Vector
-     * @return Magnitude of the Ep_Vector
+     * Calculate the magnitude of the EpVector
+     * @return Magnitude of the EpVector
      */
     public float magnitude()
     {
@@ -165,7 +168,7 @@ public class Ep_Vector {
     }
 
     /**
-     * Normalize the Ep_Vector, i.e. turn it into an Ep_Vector of magnitude 1
+     * Normalize the EpVector, i.e. turn it into an EpVector of magnitude 1
      */
     public void normalize()
     {
@@ -176,7 +179,7 @@ public class Ep_Vector {
     }
 
     /**
-     * Negate the Ep_Vector, i.e. same magnitude, but opposite direction
+     * Negate the EpVector, i.e. same magnitude, but opposite direction
      */
     public void negate()
     {
@@ -186,12 +189,12 @@ public class Ep_Vector {
     }
 
     /**
-     * Calculate the angle, in radians, between two Ep_Vectors
-     * @param u First Ep_Vector
-     * @param v Second Ep_Vector
-     * @return Angle, in radians, between the two Ep_Vectors
+     * Calculate the angle, in radians, between two EpVectors
+     * @param u First EpVector
+     * @param v Second EpVector
+     * @return Angle, in radians, between the two EpVectors
      */
-    public static float angleBetweenVectors(Ep_Vector u, Ep_Vector v)
+    public static float angleBetweenVectors(EpVector u, EpVector v)
     {
         float retval;
         float dotProduct;
@@ -209,5 +212,4 @@ public class Ep_Vector {
         return retval;
     }
 
-    private float[] components;     //!< Components that define the vector (x, y, z)
 }
