@@ -5,14 +5,14 @@ package com.ep.math;
  */
 public class EpVector {
 
-    private float[] components;     //!< Components that define the vector (x, y, z)
+    private double[] components;     //!< Components that define the vector (x, y, z)
 
     /**
      * Construct a vector with all components initialized to 0.0f
      */
     public EpVector()
     {
-        components = new float[3];
+        components = new double[3];
         components[0] = 0.0f;
         components[1] = 0.0f;
         components[2] = 0.0f;
@@ -20,11 +20,11 @@ public class EpVector {
 
     /**
      * Construct a vector by specifying one dimension
-     * @param x a float describing the x component of a vector.
+     * @param x a double describing the x component of a vector.
      */
-    public EpVector(float x)
+    public EpVector(double x)
     {
-        components = new float[3];
+        components = new double[3];
         components[0] = x;
         components[1] = 0.0f;
         components[2] = 0.0f;
@@ -32,12 +32,12 @@ public class EpVector {
 
     /**
      * Construct a vector by specifying two dimensions
-     * @param x a float describing the x component of a vector.
-     * @param y a float describing the y component of a vector.
+     * @param x a double describing the x component of a vector.
+     * @param y a double describing the y component of a vector.
      */
-    public EpVector(float x, float y)
+    public EpVector(double x, double y)
     {
-        components = new float[3];
+        components = new double[3];
         components[0] = x;
         components[1] = y;
         components[2] = 0.0f;
@@ -45,13 +45,13 @@ public class EpVector {
 
     /**
      * Construct a vector by specifying three dimensions
-     * @param x a float describing the x component of a vector.
-     * @param y a float describing the y component of a vector.
-     * @param z a float describing the z component of a vector.
+     * @param x a double describing the x component of a vector.
+     * @param y a double describing the y component of a vector.
+     * @param z a double describing the z component of a vector.
      */
-    public EpVector(float x, float y, float z)
+    public EpVector(double x, double y, double z)
     {
-        components = new float[3];
+        components = new double[3];
         components[0] = x;
         components[1] = y;
         components[2] = z;
@@ -62,7 +62,7 @@ public class EpVector {
      * @param component Component requested, i.e. 0 = x, 1 = y, 2 = z
      * @return The value of the component
      */
-    public float get(int component)
+    public double get(int component)
     {
         if ((component <= this.components.length) && (component >= 0))
         {
@@ -109,7 +109,7 @@ public class EpVector {
      * Multiply the vector by the scalar
      * @param multiplier Scalar to multiply the vector by
      */
-    public void multiply(float multiplier)
+    public void multiply(double multiplier)
     {
         components[0] *= multiplier;
         components[1] *= multiplier;
@@ -120,7 +120,7 @@ public class EpVector {
      * Divide the vector by the scalar
      * @param divisor Scalar to divide the vector by
      */
-    public void divide(float divisor)
+    public void divide(double divisor)
     {
         components[0] /= divisor;
         components[1] /= divisor;
@@ -132,9 +132,9 @@ public class EpVector {
      * @param vector2 The EpVector to perform the dot product with
      * @return The dot product of these EpVectors
      */
-    public float dot(EpVector vector2)
+    public double dot(EpVector vector2)
     {
-        float retval;
+        double retval;
         retval = (components[0] * vector2.get(0)) + (components[1] * vector2.get(1)) + (components[2] * vector2.get(2));
 
         return retval;
@@ -156,14 +156,13 @@ public class EpVector {
      * Calculate the magnitude of the EpVector
      * @return Magnitude of the EpVector
      */
-    public float magnitude()
+    public double magnitude()
     {
-        float retval;
-        float xSquared = components[0] * components[0];
-        float ySquared = components[1] * components[1];
-        float zSquared = components[2] * components[2];
-        double retvalD = Math.sqrt(xSquared + ySquared + zSquared);     //  Math.sqrt returns a double, so create a double and return as Float
-        retval = (float)retvalD;
+        double retval;
+        double xSquared = components[0] * components[0];
+        double ySquared = components[1] * components[1];
+        double zSquared = components[2] * components[2];
+        retval = Math.sqrt(xSquared + ySquared + zSquared);     //  Math.sqrt returns a double, so create a double and return as Float
         return retval;
     }
 
@@ -172,7 +171,7 @@ public class EpVector {
      */
     public void normalize()
     {
-        float magnitude = magnitude();
+        double magnitude = magnitude();
         components[0] /= magnitude;
         components[1] /= magnitude;
         components[2] /= magnitude;
@@ -194,20 +193,20 @@ public class EpVector {
      * @param v Second EpVector
      * @return Angle, in radians, between the two EpVectors
      */
-    public static float angleBetweenVectors(EpVector u, EpVector v)
+    public static double angleBetweenVectors(EpVector u, EpVector v)
     {
-        float retval;
-        float dotProduct;
+        double retval;
+        double dotProduct;
         dotProduct = u.dot(v);
 
-        float magnitudesMultiplied;
+        double magnitudesMultiplied;
         magnitudesMultiplied = u.magnitude() * v.magnitude();
 
         double cosTheta = dotProduct / magnitudesMultiplied;
 
         double theta;
         theta = Math.acos(cosTheta);
-        retval = (float)theta;
+        retval = theta;
 
         return retval;
     }
