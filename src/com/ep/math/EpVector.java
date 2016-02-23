@@ -4,34 +4,33 @@ package com.ep.math;
  * Created by Josh Pacana on 2/17/16.
  */
 public class EpVector {
-
     private double[] components;     //!< Components that define the vector (x, y, z)
 
     /**
-     * Construct a vector with all components initialized to 0.0f
+     * Construct an EpVector with all components initialized to 0.0
      */
     public EpVector()
     {
         components = new double[3];
-        components[0] = 0.0f;
-        components[1] = 0.0f;
-        components[2] = 0.0f;
+        components[0] = 0.0;
+        components[1] = 0.0;
+        components[2] = 0.0;
     }
 
     /**
-     * Construct a vector by specifying one dimension
+     * Construct an EpVector by specifying one dimension
      * @param x a double describing the x component of a vector.
      */
     public EpVector(double x)
     {
         components = new double[3];
         components[0] = x;
-        components[1] = 0.0f;
-        components[2] = 0.0f;
+        components[1] = 0.0;
+        components[2] = 0.0;
     }
 
     /**
-     * Construct a vector by specifying two dimensions
+     * Construct an EpVector by specifying two dimensions
      * @param x a double describing the x component of a vector.
      * @param y a double describing the y component of a vector.
      */
@@ -40,11 +39,11 @@ public class EpVector {
         components = new double[3];
         components[0] = x;
         components[1] = y;
-        components[2] = 0.0f;
+        components[2] = 0.0;
     }
 
     /**
-     * Construct a vector by specifying three dimensions
+     * Construct an EpVector by specifying three dimensions
      * @param x a double describing the x component of a vector.
      * @param y a double describing the y component of a vector.
      * @param z a double describing the z component of a vector.
@@ -69,7 +68,7 @@ public class EpVector {
             return components[component];
 
         }
-        return 0.0f;
+        return 0.0;
     }
 
     /**
