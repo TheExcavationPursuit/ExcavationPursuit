@@ -7,7 +7,7 @@ import static org.lwjgl.opengl.GL11.*;
  * Created by Chris on 2/15/2016.
  *
  */
-public class Ep_ShaderProgram {
+public class EpShaderProgram {
 
     private int shaderProgramID;
     private enum shader {VERTEX, FRAGMENT}
@@ -16,9 +16,9 @@ public class Ep_ShaderProgram {
 
         int shaderID = -1;
 
-        if(type == Ep_ShaderProgram.shader.VERTEX) {
+        if(type == EpShaderProgram.shader.VERTEX) {
             shaderID = glCreateShader(GL_VERTEX_SHADER);
-        } else if(type == Ep_ShaderProgram.shader.FRAGMENT) {
+        } else if(type == EpShaderProgram.shader.FRAGMENT) {
             shaderID = glCreateShader(GL_FRAGMENT_SHADER);
         }
 
@@ -40,7 +40,7 @@ public class Ep_ShaderProgram {
     public void createShaderProgram() {
         shaderProgramID = glCreateProgram();
 
-        int vertexShader   = compileShader(Ep_Shaders.SIMPLE_VERTEX_SHADER, shader.VERTEX);
-        int fragmentShader = compileShader(Ep_Shaders.SIMPLE_FRAGMENT_SHADER, shader.FRAGMENT);
+        int vertexShader   = compileShader(EpShaders.SIMPLE_VERTEX_SHADER, shader.VERTEX);
+        int fragmentShader = compileShader(EpShaders.SIMPLE_FRAGMENT_SHADER, shader.FRAGMENT);
     }
 }

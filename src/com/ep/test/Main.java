@@ -15,7 +15,7 @@ public class Main {
     // We need to strongly reference callback instances.
     private GLFWErrorCallback errorCallback;
     private GLFWKeyCallback   keyCallback;
-    private Ep_ShaderProgram  ep_shaderProgram;
+    private EpShaderProgram ep_shaderProgram;
 
     // The window handle
     private long window;
@@ -95,7 +95,7 @@ public class Main {
         // bindings available for use.
         GL.createCapabilities();
 
-        ep_shaderProgram = new Ep_ShaderProgram();
+        ep_shaderProgram = new EpShaderProgram();
         ep_shaderProgram.createShaderProgram();
     }
 

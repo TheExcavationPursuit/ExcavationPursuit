@@ -4,7 +4,7 @@ package com.ep.glutility;
  * Created by Chris on 2/15/2016.
  * Shaders being stored as strings
  */
-public class Ep_Shaders {
+public class EpShaders {
 
     /**
      * Basic vertex shader used for testing
