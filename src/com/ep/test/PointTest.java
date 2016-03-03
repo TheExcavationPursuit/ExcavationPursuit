@@ -17,5 +17,7 @@ public class PointTest {
         System.out.println("Distance: point2 -> point3");
         System.out.println(EpPoint.distanceBetweenPoints(point2, point3));
         System.out.println();
+
+
     }
 }
