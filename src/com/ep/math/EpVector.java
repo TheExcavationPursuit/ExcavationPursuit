@@ -57,6 +57,19 @@ public class EpVector {
     }
 
     /**
+     * Construct an EpVector by specifying two EpPoints
+     * @param from  EpPoint where the vector points from
+     * @param to  EpPoint where the vector points to
+     */
+    public EpVector(EpPoint from, EpPoint to)
+    {
+        components = new double[3];
+        components[0] = to.get(0) - from.get(0);
+        components[1] = to.get(1) - from.get(1);
+        components[2] = to.get(2) - from.get(2);
+    }
+
+    /**
      * Get the component requested at that index
      * @param component Component requested, i.e. 0 = x, 1 = y, 2 = z
      * @return The value of the component
@@ -72,11 +85,26 @@ public class EpVector {
     }
 
     /**
+     * Set the component at specified index to the value passed in
+     * @param component Component requested, i.e. 0 = x, 1 = y, 2 = z
+     * @param value Value to set component to
+     */
+    public void set(int component, double value)
+    {
+        if ((component <= this.components.length) && (component >= 0))
+        {
+            this.components[component] = value;
+        }
+    }
+
+
+    /**
      * String representation of an EpVector
      * @return String representation of an EpVector in the form of [x, y, z]
      */
     @Override
-    public String toString() {
+    public String toString()
+    {
         String retval;
         retval = String.format("[%f, %f, %f]", components[0], components[1], components[2]);
         return retval;

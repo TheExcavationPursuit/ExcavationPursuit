@@ -65,5 +65,11 @@ public class VectorTest {
         System.out.println(v1);
         System.out.println();
 
+        System.out.println("Constructing EpVector with 2 EpPoints");
+        EpPoint p1 = new EpPoint(1.0, 1.0, 1.0);
+        EpPoint p2 = new EpPoint(7.0, 7.0, 7.0);
+        EpVector v4 = new EpVector(p1, p2);
+        System.out.println(v4);
+        System.out.println();
     }
 }
